@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+// ViewModel for list of items view
+// PrimaryTap
+class ToDoListViewViewModel: ObservableObject {
+    init() {}
+}
