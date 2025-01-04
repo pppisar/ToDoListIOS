@@ -27,9 +27,14 @@ struct RegistrationView: View {
                 .textFieldStyle(DefaultTextFieldStyle())
             
             TLButton(title: "Create account", foreground: .white, background: .green) {
-                // Attempt to Register
+                viewModel.register()
             }
             .padding(8)
+            
+            if !viewModel.errorMessage.isEmpty {
+                Text(viewModel.errorMessage)
+                    .foregroundColor(Color.red)
+            }
         }
     }
 }
