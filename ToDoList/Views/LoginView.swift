@@ -15,7 +15,8 @@ struct LoginView: View {
         NavigationView() {
             VStack {
                 // Header
-                HeaderView()
+                HeaderView(title: "To DO List", subtitle: "Get things done", angle: 15, background: .pink)
+                    .offset(y: 50)
                 
                 // Login Form
                 Form {
@@ -28,7 +29,7 @@ struct LoginView: View {
                         // Attempt to log in
                     } label: {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 12)
                                 .foregroundColor(Color.blue)
                             
                             Text("Log In")
