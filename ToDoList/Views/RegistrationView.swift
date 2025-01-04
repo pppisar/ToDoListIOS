@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @State var fullName = ""
     @State var email = ""
     @State var password = ""
-    @State var confirmPassword = ""
     
     var body: some View {
         HeaderView(title: "Register", subtitle: "Start organizing todos", angle: -15, background: .orange)
         
         Form {
+            TextField("Full Name", text: $fullName)
+                .textFieldStyle(DefaultTextFieldStyle())
             TextField("Email Address", text: $email)
                 .textFieldStyle(DefaultTextFieldStyle())
-            TextField("Password", text: $password)
-                .textFieldStyle(DefaultTextFieldStyle())
-            TextField("Confirm Password", text: $confirmPassword)
+            SecureField("Password", text: $password)
                 .textFieldStyle(DefaultTextFieldStyle())
             
             Button {
@@ -35,8 +35,6 @@ struct RegistrationView: View {
                 }
             }
         }
-        
-        Spacer()
     }
 }
 

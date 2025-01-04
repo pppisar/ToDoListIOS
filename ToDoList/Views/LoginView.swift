@@ -22,7 +22,7 @@ struct LoginView: View {
                 Form {
                     TextField("Email Address", text: $email)
                         .textFieldStyle(DefaultTextFieldStyle())
-                    TextField("Password", text: $password)
+                    SecureField("Password", text: $password)
                         .textFieldStyle(DefaultTextFieldStyle())
                     
                     Button {
