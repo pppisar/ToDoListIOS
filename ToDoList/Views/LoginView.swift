@@ -28,9 +28,14 @@ struct LoginView: View {
                         .textFieldStyle(DefaultTextFieldStyle())
                     
                     TLButton(title: "Log In", foreground: .white, background: .blue) {
-                        // Attempt to Log In
+                        viewModel.login()
                     }
                     .padding(8)
+                    
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(Color.red)
+                    }
                 }
                 // Create Account
                 VStack {
